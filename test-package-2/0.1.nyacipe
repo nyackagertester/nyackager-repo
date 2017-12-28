@@ -1,6 +1,6 @@
-(uri "https://github.com/mikae/test-package-2")
+(uri "https://github.com/nyackagertester/test-package-2")
 (fetcher git)
-(rev "5052be6")
+(rev "08a24b3")
 
 (clean   (rmfile "test-package-2.elc"))
 (compile (byte-compile :files ("test-package-2.el")))

@@ -1,6 +1,6 @@
-(uri "https://github.com/mikae/very-test-package")
+(uri "https://github.com/nyackagertester/very-test-package")
 (fetcher git)
-(rev "5052be6")
+(rev "9642750")
 
 (dependencies (:name "test-package"
                :version "0.1"))
