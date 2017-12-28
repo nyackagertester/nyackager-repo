@@ -1,0 +1,10 @@
+(name    "test-repo")
+(packages (:name     "very-test-package"
+           :versions ("0.1"
+                      "0.2"))
+          (:name     "test-package"
+           :versions ("0.1"
+                      "0.2"))
+          (:name     "test-package-2"
+           :versions ("0.1"
+                      "0.2")))

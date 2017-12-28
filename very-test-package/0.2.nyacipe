@@ -1,0 +1,9 @@
+(uri "https://github.com/mikae/very-test-package")
+(fetcher git)
+(rev "44f86b8")
+
+(dependencies (:name "test-package"))
+
+(clean   (rmfile "very-test-package.elc"))
+(compile (byte-compile :files ("very-test-package.el")))
+(install (copy :what ("very-test-package.elc")))

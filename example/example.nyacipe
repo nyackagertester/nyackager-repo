@@ -1,0 +1,34 @@
+(source  mikae)
+(uri     "https://github.com/mikae/test-package.el")
+(fetcher :type git
+         :branch "master"
+         :rev "somerev")
+
+(requirements
+  (version :minimal "23"
+           :unsupported "25.2")
+  (features :with (modules)
+            :without (jpg))
+  (arch ((:type linux)
+         (:type freebsd)
+         (:type windows)))
+  (commands (cd ls pwd)))
+
+(dependencies (:name "cl-lib"
+               :emacs-version (< "24.3")))
+(dev-dependencies (:name "buttercup"
+                   :version "master"))
+
+(test (:name "test .el"
+       :steps ((cmd "cask exec buttercup -L . test")))
+      (:name "test .elc"
+       :steps ((byte-compile "f.el")
+               (exec "buttercup -L . test")
+               (cmd "echo \"nya\""))))
+(clean (rmfile "f.elc"))
+(compile (byte-compile "f.el"))
+(install ((:files ("f.elc")
+           :destination root)
+          (:files ("f.elc"))
+          (:files ("f.elc")
+           :destination (emacs-dir "test"))))

@@ -1,0 +1,7 @@
+(uri "https://github.com/mikae/some-test-package")
+(fetcher git)
+(rev "cb56dfe")
+
+(clean   (rmfile "test-package.elc"))
+(compile (byte-compile :files ("test-package.el")))
+(install (copy :what ("test-package.elc")))
