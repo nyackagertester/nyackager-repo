@@ -1,0 +1,6 @@
+(uri "https://github.com/nyackagertester/test-package-3")
+(fetcher git)
+
+(clean   (rmfile "test-package-3.elc"))
+(compile (byte-compile :files ("test-package-3.el")))
+(install (copy :what ("test-package-3.elc")))
